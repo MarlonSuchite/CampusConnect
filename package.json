@@ -1,0 +1,11 @@
+{
+  "name": "campusconnect",
+  "version": "1.0.0",
+  "description": "BackEnd campusconnect",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marlon Chajon",
+  "license": "MIT"
+}
