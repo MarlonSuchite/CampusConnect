@@ -15,4 +15,9 @@ Documentacion de la creacion del proyecto
 
 --Inicializar un proyecto con TypeScript
     npm run tsc -- --init hacemos referencia al paso 3
-    
+
+--Instalacion de definiciones de tipos para NodeJs de typescript
+    npm i --save-dev @types/node
+
+-- Instalacion de typos de express
+    npm i @types/express -D

@@ -1,1 +1,3 @@
-console.log('Iniciio del BackEnd')
+import {listen} from './configs/app'
+
+listen()
