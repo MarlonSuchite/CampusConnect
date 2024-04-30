@@ -1,0 +1,12 @@
+{
+    "extends": ["eslint:recommended"],
+    "parserOptions": {
+      "ecmaVersion": 2021
+    },
+    "rules": {
+      // Reglas personalizadas
+      "indent": ["error", 2], // Usar indentación de 2 espacios
+      "semi": ["error", "always"], // Requerir punto y coma al final de las sentencias
+      "quotes": ["error", "single"], // Usar comillas simples para strings
+    }
+}
