@@ -21,3 +21,6 @@ Documentacion de la creacion del proyecto
 
 -- Instalacion de typos de express
     npm i @types/express -D
+
+--Intalacion de nodemon
+    npm i nodemon -D

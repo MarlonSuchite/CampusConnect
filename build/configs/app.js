@@ -10,6 +10,7 @@ const app = (0, express_1.default)();
 const PORT = 3000 || 30001;
 app.use(express_1.default.json()); //Midelware que transforma la req.body en un json
 const listen = () => {
-    console.log('Hola');
+    app.listen(PORT);
+    console.log(`PUERTO CORRIENDO EN ${PORT}`);
 };
 exports.listen = listen;
