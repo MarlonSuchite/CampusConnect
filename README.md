@@ -33,3 +33,11 @@ Documentacion de la creacion del proyecto
 
 --Conexion a mongo db
     mongodb://127.0.0.1:27017/nombreDB
+
+--Instalacion de morgan y sus tipos para tyescript
+    npm i morgan 
+    npm i @types/morgan -D
+
+--Instalacion de cors y sus tipos
+    npm i cors
+    npm i @types/morgan -D
