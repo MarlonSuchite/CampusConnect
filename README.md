@@ -19,7 +19,7 @@ Documentacion de la creacion del proyecto
 --Instalacion de definiciones de tipos para NodeJs de typescript
     npm i --save-dev @types/node
 
--- Instalacion de typos de express
+-- Instalacion de tipos de express
     npm i @types/express -D
 
 --Intalacion de nodemon
@@ -27,3 +27,6 @@ Documentacion de la creacion del proyecto
 
 --Agregamos al proyecto ts-node leelo  https://www.npmjs.com/package/ts-node#overview
     npm i ts-node -D
+
+--Variables de entorno dotenv
+    npm i dotenv
