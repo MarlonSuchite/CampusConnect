@@ -1,23 +1,24 @@
-{
-  "name": "campusconnect",
-  "version": "1.0.0",
-  "description": "BackEnd campusconnect",
-  "main": "index.js",
-  "scripts": {
-    "tsc": "tsc",
-    "start": "node build/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Marlon Chajon",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.19.2",
-    "mongoose": "8.3.1"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.21",
-    "@types/node": "20.12.7",
-    "nodemon": "^3.1.0",
-    "typescript": "5.4.5"
+  {
+    "name": "campusconnect",
+    "version": "1.0.0",
+    "description": "BackEnd campusconnect",
+    "main": "index.ts",
+    "scripts": {
+      "start": "tsc && node build/index.js",
+      "dev": "nodemon --watch *.ts* ",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Marlon Chajon",
+    "license": "MIT",
+    "dependencies": {
+      "express": "^4.19.2",
+      "mongoose": "8.3.1"
+    },
+    "devDependencies": {
+      "@types/express": "^4.17.21",
+      "@types/node": "20.12.7",
+      "nodemon": "^3.1.0",
+      "ts-node": "^10.9.2",
+      "typescript": "5.4.5"
+    }
   }
-}

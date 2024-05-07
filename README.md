@@ -24,3 +24,6 @@ Documentacion de la creacion del proyecto
 
 --Intalacion de nodemon
     npm i nodemon -D
+
+--Agregamos al proyecto ts-node leelo  https://www.npmjs.com/package/ts-node#overview
+    npm i ts-node -D
