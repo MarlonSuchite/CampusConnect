@@ -30,3 +30,6 @@ Documentacion de la creacion del proyecto
 
 --Variables de entorno dotenv
     npm i dotenv
+
+--Conexion a mongo db
+    mongodb://127.0.0.1:27017/nombreDB
