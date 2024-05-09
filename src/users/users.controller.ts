@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import {User} from '../Interfaces/User'
 import Users from "./users.model";
+import { encrypt } from "../helpers/handlerBcrypt";
 
 
 //Funcion para el usuario Administrador
@@ -19,11 +20,15 @@ export const createAdmin = async() => {
             rol: 'ADMIN'
         }
 
-        const existAdmin = await Users.find({name: data.name, email: data.email})
+        const existAdmin = await Users.findOne({name: data.name, email: data.email})
         
         if(existAdmin) return console.log('El administrador ya existe', data.name)
+            
+        //Encriptacion de password    
+        data.password = await encrypt(data.password)
+
         const newUser = new Users<User>(data)
-        await newUser.save()
+        await newUser.save() 
         return console.log({message: 'Usuario agregado con exito'})
         
     }catch(e){
