@@ -57,7 +57,7 @@ export const newUser = async(req: Request, res: Response) => {
 }
 
 
-
+//Funcion para 
 
 
 
@@ -75,7 +75,8 @@ export const newUser = async(req: Request, res: Response) => {
 
 
 Segui Marlonnnnnnn
-
+para el jwt 
+https://medium.com/@diego.coder/autenticaci%C3%B3n-en-node-js-con-json-web-tokens-y-express-ed9d90c5b579
 
 
 

@@ -41,3 +41,11 @@ Documentacion de la creacion del proyecto
 --Instalacion de cors y sus tipos
     npm i cors
     npm i @types/morgan -D
+
+--Instalacion de bcryptjs encriptador de contraseñas
+    npm i bcryptjs
+
+--Intalacion de @types/bcryptjs paquete de definición de tipos para BcryptJS con TypeScript.
+    npm i @types/bcryptjs
+
+    
