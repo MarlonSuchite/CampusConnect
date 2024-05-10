@@ -48,4 +48,11 @@ Documentacion de la creacion del proyecto
 --Intalacion de @types/bcryptjs paquete de definición de tipos para BcryptJS con TypeScript.
     npm i @types/bcryptjs
 
+--Instalacion de jsonwebtoken para la creacion de tokens
+    npm i jsonwebtoken
+
+--Intalacion de los tipos de jsonwebtoken
+    npm i @types/jsonwebtoken
+    
+
     

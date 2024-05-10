@@ -1,5 +1,6 @@
 
 export interface User {
+    _id?: string
     license: string
     name: string
     lastname: string
