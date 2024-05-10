@@ -4,7 +4,6 @@ import Users from "./users.model";
 import { encrypt, compare } from "../helpers/handlerBcrypt";
 import { createToken } from "../helpers/jwt";
 
-
 //Funcion para el usuario Administrador
 
 export const createAdmin = async() => {
@@ -59,7 +58,8 @@ export const newUser = async(req: Request, res: Response) => {
         return res.send({message: 'Usuario agregado con exito'})
     }catch(e){
         console.log(e)
-        return res.status(500).send({message: 'Error en el Servidor'})
+        return res.status(500)
+               .send({message: 'Error en el Servidor'})
     }
 }
 
@@ -92,10 +92,67 @@ export const login = async(req: Request, res: Response) => {
         }
 
     }catch(e){
-        return res.status(500).send({message: 'Error de servidor'})
+        return res.status(500)
+               .send({message: 'Error de servidor'})
     }
 }   
 
+
+//Obtener todos los usuario
+export const getAllUsers = async(req: Request, res: Response) => {
+    try{
+        const allUsers = await Users.find({},{password: 0, license: 0})
+        return res.send({messgage: 'Users', users: allUsers})
+    }catch(e){
+        return res.status(500)
+               .send({message: 'Error de servidor'})
+    }
+}
+
+
+//Obtener un unico usuario
+export const getUser = async(req: Request, res: Response) => {
+    try{
+        const data = req.params.id
+        //Busqueda de usuario por id
+        const existUser = await Users.findOne({_id: data},{password: 0, license: 0})
+        
+        if(!existUser) return res.status(404).send({message: 'Usuario no encontrado'})
+        
+        return res.send({message: 'Usuario econtrado', user: existUser})
+    }catch(e){
+        return res.status(500)
+               .send({message: 'Error de servidor'})
+    }
+}
+
+
+//Modificar un usuario
+export const updateUser = async(req: Request, res: Response) => {
+    try{
+        //Id para modificar usuario
+        const { id } = req.params
+        //Data a actualizar
+        const data = req.body
+
+        //Busqueda de usuario
+        const existUser = await Users.findOne({_id: id})
+        if(!existUser) return res.status(404).send({message: 'Usuario no encontrado'})
+        
+        const updatedUser = await Users.findOneAndUpdate(//Se usa esta funcion porque nos devuelve el dato actualizado
+            {_id: id}, //Busca el registro que coincida con el id
+            {//Campos a actualizar
+                data
+            },
+            {new: true}//Nos devuelve el dato actualizado
+        )
+        if(!updatedUser) return res.status(400).send({message: 'Usuario no actualizado'})
+            return res.send({message: 'Usuario actualizado', updatedUser})
+    }catch(e){
+        return res.status(500)
+               .send({message: 'Error del servidor'})
+    }    
+} 
 
 
 
