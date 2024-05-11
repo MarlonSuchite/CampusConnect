@@ -4,6 +4,8 @@ import express from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
 import userRouters from '../src/users/users.routes'
+import postRouters from '../src/post/post.routes'
+import commentsRouter from '../src/comments/comments.routes'
 
 const app = express()
 const PORT = process.env.PORT || 3001
@@ -15,6 +17,8 @@ app.use(cors())
 
 //Rutas
 app.use('/user', userRouters)
+app.use('/post', postRouters)
+app.use('/comments', commentsRouter)
 
 export const listen = () => {
     app.listen(PORT)

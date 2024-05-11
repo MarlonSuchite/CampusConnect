@@ -1,6 +1,7 @@
 //importamos jsonwebtoken
 import jwt, {JwtPayload} from 'jsonwebtoken'
 import { User } from '../Interfaces/User'
+import { Token } from '../Interfaces/Token'
 
 /* 
     Partes de un token
@@ -36,7 +37,7 @@ export const createToken = async(data: User): Promise<string> => {
 }
 
 //Funcion para verificar el token
-export const verifyToken = async(token: string): Promise<string | JwtPayload> => {
+export const verifyToken = async(token: string) => {
     try{
         const valueToken = token.replace(/['"]+/g, '') //Le quitamos las comillas al token
         return jwt.verify(valueToken, `${process.env.SECRET_KEY}`)//Devolvemos un token tipo JwtPayload

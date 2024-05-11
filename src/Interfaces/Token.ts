@@ -1,5 +1,6 @@
-export interface Token{
-    licence: string
+export interface Token {
+    _id: string  
+    license: string
     faculty: string
     career: string
     email: string

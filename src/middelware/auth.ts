@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from "express";
 import { verifyToken } from "../helpers/jwt";
-import { User } from "../Interfaces/User";
 
 //Funcion para verificar que el usuario tiene token
 export const existToken = async(req: Request, res: Response, next: NextFunction) => {
@@ -13,6 +12,7 @@ export const existToken = async(req: Request, res: Response, next: NextFunction)
         //Validar que el token es correcto
         const tokenData = await verifyToken(token)
         if(typeof tokenData !== 'string'){//Si no es tipo string lo dejamos pasar
+            req.user = tokenData
             next()
         }else{
             res.status(403)
@@ -20,7 +20,6 @@ export const existToken = async(req: Request, res: Response, next: NextFunction)
         }
         
     }catch(e){
-        next(e)
         return res.status(403).send({message: 'Token invalido'})
     }
 }
