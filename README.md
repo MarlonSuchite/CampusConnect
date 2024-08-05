@@ -13,7 +13,7 @@ Documentacion de la creacion del proyecto
         "tsc": "tsc"
     }
 
---Inicializar un proyecto con TypeScript
+--Inicializar un proyecto con TypeScript, esto nos creara el archivo tsconfig.json
     npm run tsc -- --init hacemos referencia al paso 3
 
 --Instalacion de definiciones de tipos para NodeJs de typescript
